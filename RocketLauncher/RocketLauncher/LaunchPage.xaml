@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RocketLauncher.ViewModels;assembly=RocketLauncher;"
+             x:Class="RocketLauncher.LaunchPage"
+             Title="Mission Control">
+  <ContentPage.BindingContext>
+    <local:LaunchViewModel />
+  </ContentPage.BindingContext>
+  <StackLayout>
+    <Label  x:Name="lblTitle"
+            Text="Mission Control"
+            FontSize="Large"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center" />
+    <Button x:Name="btnArm"
+            Text="ARM"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            Clicked="btnArm_Clicked" />
+    <Label  x:Name="lblStatus"
+            Text="{Binding Status, StringFormat='Status: {0}'}"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center" />
+    <Button x:Name="btnLaunch"
+            Text="LAUNCH"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            Clicked="btnLaunch_Clicked" />
+    <Slider x:Name="sldDelay"
+            Value="{Binding Delay, Mode=TwoWay}"
+            Minimum="0"
+            Maximum="30"
+            VerticalOptions="CenterAndExpand"
+            ValueChanged="sldDelay_ValueChanged" />
+    <Label  x:Name="lblDelay"
+            BindingContext="{x:Reference sldDelay}"
+            Text="{Binding Value, StringFormat='Delay: {0:F0} seconds'}"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center" />
+    <Button x:Name="btnConfigure"
+            Text="Configure"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            Clicked="btnConfigure_Clicked" />
+  </StackLayout>
+</ContentPage>
