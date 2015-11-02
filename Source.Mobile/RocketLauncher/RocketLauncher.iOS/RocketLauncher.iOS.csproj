@@ -8,9 +8,9 @@
     <ProjectGuid>{0812FE0D-6575-45C3-A1FC-0C9E2F018E0A}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RocketLaunch.iOS</RootNamespace>
+    <RootNamespace>RocketLauncher.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>RocketLaunchiOS</AssemblyName>
+    <AssemblyName>RocketLauncher</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

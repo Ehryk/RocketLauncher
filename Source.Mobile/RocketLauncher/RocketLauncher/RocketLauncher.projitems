@@ -6,7 +6,7 @@
     <SharedGUID>e006ea84-2d1b-4289-aa88-8f075669be0a</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>RocketLaunch</Import_RootNamespace>
+    <Import_RootNamespace>RocketLauncher</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Launch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Tweet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConfigurationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LaunchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

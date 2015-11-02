@@ -8,16 +8,19 @@ namespace RocketLauncher.Models
     class Launch
     {
         [JsonProperty("DeviceName")]
-        string deviceName;
+        string DeviceName;
 
-        [JsonProperty("DateTime")]
-        DateTime datetime;
+        [JsonProperty("BeginTime")]
+        DateTime BeginTime;
+
+        [JsonProperty("LaunchTime")]
+        DateTime? LaunchTime;
 
         [JsonProperty("Delay")]
-        int delay;
+        int Delay;
 
         [JsonProperty("Cancelled")]
-        bool cancelled;
+        bool Cancelled;
 
         
     }

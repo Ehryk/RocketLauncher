@@ -58,6 +58,7 @@ namespace RocketLauncher
             {
                 ViewModel.Connected = false;
                 ViewModel.DeviceName = null;
+                ViewModel.Armed = false;
             }
         }
 
