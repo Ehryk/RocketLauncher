@@ -10,16 +10,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Launch.xaml.cs">
-      <DependentUpon>Launch.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)LaunchPage.xaml.cs">
+      <DependentUpon>LaunchPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Launch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Tweet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LaunchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Launch.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LaunchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
