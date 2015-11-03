@@ -18,6 +18,7 @@ namespace RocketLauncher.Pages
 
 		public LaunchPage()
 		{
+            NavigationPage.SetHasNavigationBar(this, false);
 			InitializeComponent();
 		}
 
@@ -41,6 +42,7 @@ namespace RocketLauncher.Pages
                 await DisplayAlert("Not Armed", "Rocket is not Armed.", "OK");
             else
             {
+                ViewModel.Armed = false;
                 await Navigation.PushAsync(new CountdownPage(ViewModel.Delay));
                 //await DisplayAlert("Launching!", LaunchString(ViewModel.Delay), "Cancel");
             }

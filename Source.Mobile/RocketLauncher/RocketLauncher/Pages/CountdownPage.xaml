@@ -15,11 +15,10 @@
             HorizontalOptions="Center" />
     <Label  x:Name="lblStatus"
             Text="{Binding Status}"
-            FontSize="Large"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="Center" />
     <Button x:Name="btnCancel"
-            Text="ABORT"
+            Text="{Binding AbortText}"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="Center"
             Clicked="btnCancel_Clicked" />

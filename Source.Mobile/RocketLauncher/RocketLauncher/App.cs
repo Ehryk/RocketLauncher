@@ -11,7 +11,7 @@ namespace RocketLauncher
 	{
 		public App()
 		{
-            MainPage = new LaunchPage();
+            MainPage = new NavigationPage(new LaunchPage());
 		}
 
 		protected override void OnStart()

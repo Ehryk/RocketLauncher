@@ -18,26 +18,38 @@ namespace RocketLauncher.Pages
 
         public CountdownPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 
-        public CountdownPage(int delay)
+        public CountdownPage(int? delay)
         {
-            ViewModel = new CountdownViewModel(delay);
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            ViewModel = new CountdownViewModel(delay);
         }
 
         public CountdownPage(CountdownViewModel viewModel)
         {
-            ViewModel = viewModel;
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            ViewModel = viewModel;
         }
 
         async void btnCancel_Clicked(object sender, EventArgs e)
         {
+            if (!ViewModel.Launched)
+                ViewModel.Cancelled = true;
             ViewModel.Countdown = null;
-            ViewModel.Cancelled = true;
+            await Task.Delay(1000);
             await Navigation.PopAsync();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            btnCancel_Clicked(null, EventArgs.Empty);
+            //Task.Delay(1000).Wait();
+            return true;
         }
     }
 }
