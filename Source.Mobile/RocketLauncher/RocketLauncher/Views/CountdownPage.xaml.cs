@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using RocketLauncher.ViewModels;
 
-namespace RocketLauncher.Pages
+namespace RocketLauncher.Views
 {
 	public partial class CountdownPage : ContentPage
 	{
