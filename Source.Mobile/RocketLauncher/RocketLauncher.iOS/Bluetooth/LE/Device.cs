@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RocketLauncher.Bluetooth.LE;
 
 #if __UNIFIED__
 using CoreBluetooth;
@@ -9,7 +10,7 @@ using MonoTouch.CoreBluetooth;
 using MonoTouch.Foundation;
 #endif
 
-namespace Robotics.Mobile.Core.Bluetooth.LE
+namespace RocketLauncher.iOS.Bluetooth.LE
 {
 	public class Device : DeviceBase
 	{

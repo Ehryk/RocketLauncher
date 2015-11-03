@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using RocketLauncher.Bluetooth.LE;
 
 #if __UNIFIED__
 using CoreBluetooth;
@@ -12,7 +13,7 @@ using MonoTouch.Foundation;
 #endif
 
 
-namespace Robotics.Mobile.Core.Bluetooth.LE
+namespace RocketLauncher.iOS.Bluetooth.LE
 {
 	public class Characteristic : ICharacteristic
 	{

@@ -88,6 +88,11 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bluetooth\LE\Adapter.cs" />
+    <Compile Include="Bluetooth\LE\Characteristic.cs" />
+    <Compile Include="Bluetooth\LE\Descriptor.cs" />
+    <Compile Include="Bluetooth\LE\Device.cs" />
+    <Compile Include="Bluetooth\LE\Service.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />

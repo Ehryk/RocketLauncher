@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using Android.Bluetooth;
 using System.Linq;
+using RocketLauncher.Bluetooth.LE;
 
-namespace Robotics.Mobile.Core.Bluetooth.LE
+namespace RocketLauncher.Droid.Bluetooth.LE
 {
 	public class Device : DeviceBase
 	{

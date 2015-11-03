@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Diagnostics;
+using RocketLauncher.Bluetooth.LE;
 
 #if __UNIFIED__
 using CoreBluetooth;
@@ -12,7 +13,7 @@ using MonoTouch.CoreBluetooth;
 using MonoTouch.CoreFoundation;
 #endif
 
-namespace Robotics.Mobile.Core.Bluetooth.LE
+namespace RocketLauncher.iOS.Bluetooth.LE
 {
 	public class Adapter : IAdapter
 	{
