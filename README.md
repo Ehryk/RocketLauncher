@@ -1,4 +1,4 @@
-Rocket Launcher v0.1
+Rocket Launcher v0.2
 ====================
 
  - Source.Arduino contains code for a bluetooth enabled arduino based RocketLauncher (hooked to the ignitor).
@@ -6,10 +6,12 @@ Rocket Launcher v0.1
 
 Latest Changes
 ---
+ - Added countdown and Bluetooth LE stack (2015.11.03)
  - Initial Release (2015.11.02)
 
 Release History
 ---
+ - v0.2 2015.11.03 Working Countdown, Navigation, Bluetooth LE stack
  - v0.1 2015.11.02 Initial Release (working demo mobile apps)
 
 Author
