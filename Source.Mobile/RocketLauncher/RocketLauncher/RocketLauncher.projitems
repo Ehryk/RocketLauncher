@@ -10,6 +10,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\BluetoothKnownItemManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\CharacteristicPropertyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\CharacteristicReadEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\DeviceBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\DeviceConnectionEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\DeviceDiscoveredEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\DeviceState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\IAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\ICharacteristic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\IDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\IDevice.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\IService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\KnownCharacteristics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\KnownDescriptors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\KnownServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\LEStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bluetooth\LE\ServicesDiscoveredEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\ResourceLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Launch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Tweet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CountdownPage.xaml.cs">
@@ -19,7 +39,6 @@
       <SubType>Code</SubType>
       <DependentUpon>LaunchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CountdownViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConfigurationViewModel.cs" />
@@ -37,5 +56,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Bluetooth\LE\KnownCharacteristics.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Bluetooth\LE\KnownDescriptors.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Bluetooth\LE\KnownServices.json" />
   </ItemGroup>
 </Project>
