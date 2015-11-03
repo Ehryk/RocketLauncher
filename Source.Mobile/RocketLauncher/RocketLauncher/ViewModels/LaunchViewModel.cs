@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RocketLauncher.ViewModels
 {
-    public class LaunchViewModel : INotifyPropertyChanged
+    public class LaunchViewModel : BaseViewModel
     {
         #region Properties
 
@@ -13,12 +13,6 @@ namespace RocketLauncher.ViewModels
         bool armed = false;
         string deviceName = null;
         int delay = 0;
-
-        #endregion
-
-        #region Implement INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
@@ -103,13 +97,7 @@ namespace RocketLauncher.ViewModels
         #endregion
 
         #region Methods
-
-        protected void Notify(string property)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-        }
-
+        
         #endregion
     }
 }

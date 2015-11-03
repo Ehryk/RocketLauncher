@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using RocketLauncher.Pages;
 
 namespace RocketLauncher
 {
@@ -10,18 +11,6 @@ namespace RocketLauncher
 	{
 		public App()
 		{
-            // The root page of your application
-            //MainPage = new ContentPage {
-            //	Content = new StackLayout {
-            //		VerticalOptions = LayoutOptions.Center,
-            //		Children = {
-            //			new Label {
-            //				XAlign = TextAlignment.Center,
-            //				Text = "Welcome to Xamarin Forms!"
-            //			}
-            //		}
-            //	}
-            //};
             MainPage = new LaunchPage();
 		}
 

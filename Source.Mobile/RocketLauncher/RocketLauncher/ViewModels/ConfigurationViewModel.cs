@@ -5,18 +5,12 @@ using System.Text;
 
 namespace RocketLauncher.ViewModels
 {
-    public class ConfigurationViewModel : INotifyPropertyChanged
+    public class ConfigurationViewModel : BaseViewModel
     {
         #region Properties
 
         #endregion
-
-        #region Implement INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion
-
+        
         #region Constructors
 
         public ConfigurationViewModel()
@@ -32,12 +26,8 @@ namespace RocketLauncher.ViewModels
         #endregion
 
         #region Methods
+        
 
-        protected void Notify(string property)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-        }
 
         #endregion
     }

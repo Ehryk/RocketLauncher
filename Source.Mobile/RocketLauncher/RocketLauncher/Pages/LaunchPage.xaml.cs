@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using RocketLauncher.ViewModels;
 
-namespace RocketLauncher
+namespace RocketLauncher.Pages
 {
 	public partial class LaunchPage : ContentPage
 	{
         protected LaunchViewModel ViewModel
         {
             get { return BindingContext as LaunchViewModel; }
+            set { BindingContext = value; }
         }
 
 		public LaunchPage()
@@ -25,7 +26,7 @@ namespace RocketLauncher
             if (!ViewModel.Connected)
             {
                 ViewModel.Armed = false;
-                await DisplayAlert("Not Connected", "Please select 'Configure' and pair with a rocket launcher", "OK");
+                await DisplayAlert("Not Connected", "Please select 'Configure' and pair with a rocket launcher.", "OK");
             }
             else
             {
@@ -36,10 +37,13 @@ namespace RocketLauncher
 
         async void btnLaunch_Clicked(object sender, EventArgs e)
         {
-            if (ViewModel.Armed)
-                await DisplayAlert("Launching!", LaunchString(ViewModel.Delay), "Cancel");
+            if (!ViewModel.Armed)
+                await DisplayAlert("Not Armed", "Rocket is not Armed.", "OK");
             else
-                await DisplayAlert("Not Armed", "Rocket is not Armed", "OK");
+            {
+                await Navigation.PushAsync(new CountdownPage(ViewModel.Delay));
+                //await DisplayAlert("Launching!", LaunchString(ViewModel.Delay), "Cancel");
+            }
         }
 
         void sldDelay_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -66,7 +70,7 @@ namespace RocketLauncher
         {
             if (remaining <= 0)
                 return "Launch!!!";
-            return String.Format("Launching in T-{0} seconds...", remaining);
+            return string.Format("Launching in T-{0} seconds...", remaining);
         }
     }
 }

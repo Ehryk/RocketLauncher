@@ -21,7 +21,5 @@ namespace RocketLauncher.Models
 
         [JsonProperty("Cancelled")]
         bool Cancelled;
-
-        
     }
 }

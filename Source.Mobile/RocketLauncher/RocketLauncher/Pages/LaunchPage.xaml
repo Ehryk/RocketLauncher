@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:RocketLauncher.ViewModels;assembly=RocketLauncher;"
-             x:Class="RocketLauncher.LaunchPage"
+             xmlns:local="clr-namespace:RocketLauncher.ViewModels;"
+             x:Class="RocketLauncher.Pages.LaunchPage"
              Title="Mission Control">
   <ContentPage.BindingContext>
     <local:LaunchViewModel />
@@ -31,8 +31,7 @@
             Value="{Binding Delay, Mode=TwoWay}"
             Minimum="0"
             Maximum="30"
-            VerticalOptions="CenterAndExpand"
-            ValueChanged="sldDelay_ValueChanged" />
+            VerticalOptions="CenterAndExpand" />
     <Label  x:Name="lblDelay"
             BindingContext="{x:Reference sldDelay}"
             Text="{Binding Value, StringFormat='Delay: {0:F0} seconds'}"
