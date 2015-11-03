@@ -17,8 +17,8 @@ namespace RocketLauncher.WinPhone
 			InitializeComponent();
 			SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
-			global::Xamarin.Forms.Forms.Init ();
-			LoadApplication (new RocketLauncher.App ());
+			global::Xamarin.Forms.Forms.Init();
+			LoadApplication(new RocketLauncher.App());
 		}
 	}
 }
