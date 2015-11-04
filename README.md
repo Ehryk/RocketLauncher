@@ -19,17 +19,18 @@ Author
 
 Build Requirements
 ---
- - Visual Studio (Built with Visual Studio 2015)
+ - Visual Studio (Built with [Visual Studio 2015](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx))
  - Xamarin License [Xamarin.com](https://xamarin.com/)
  - NuGet (packages should restore)
    - [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms) - Xamarin Forms
    - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) - JSON Parsing
+   - [NUnit](https://www.nuget.org/packages/NUnit) - Unit Testing
 
 Contact
 ---
 Eric Menze
  - [Email Me](mailto:rhaistlin+gh@gmail.com)
- - [www.ericmenze.com](http://ericmenze.com)
+ - [Portfolio](http://www.ericmenze.com/cv/portfolios)
  - [Github](https://github.com/Ehryk)
  - [Twitter](https://twitter.com/Ehryk42)
  - [Source Code](https://github.com/Ehryk/RocketLauncher)
