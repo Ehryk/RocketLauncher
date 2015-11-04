@@ -1,26 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:RocketLauncher.ViewModels;"
-             x:Class="RocketLauncher.Views.CountdownPage"
-             Title="Countdown">
-  <ContentPage.BindingContext>
-    <local:CountdownViewModel />
-  </ContentPage.BindingContext>
-  <StackLayout>
-    <Label  x:Name="lblTitle"
-            Text="Countdown"
-            FontSize="Large"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="Center" />
-    <Label  x:Name="lblStatus"
-            Text="{Binding Status}"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="Center" />
-    <Button x:Name="btnCancel"
-            Text="{Binding AbortText}"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="Center"
-            Clicked="btnCancel_Clicked" />
-  </StackLayout>
+						 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						 xmlns:local="clr-namespace:RocketLauncher.ViewModels;"
+						 x:Class="RocketLauncher.Views.CountdownPage"
+						 Title="Countdown">
+	<ContentPage.BindingContext>
+		<local:CountdownViewModel />
+	</ContentPage.BindingContext>
+	<StackLayout>
+		<Label  x:Name="lblTitle"
+						Text="Countdown"
+						FontSize="Large"
+						VerticalOptions="CenterAndExpand"
+						HorizontalOptions="Center" />
+		<Label  x:Name="lblStatus"
+						Text="{Binding Status}"
+						VerticalOptions="CenterAndExpand"
+						HorizontalOptions="Center" />
+		<Button x:Name="btnCancel"
+						Text="{Binding AbortText}"
+            IsEnabled="{Binding AbortEnabled}"
+						VerticalOptions="CenterAndExpand"
+						HorizontalOptions="Center"
+						Clicked="btnCancel_Clicked" />
+	</StackLayout>
 </ContentPage>

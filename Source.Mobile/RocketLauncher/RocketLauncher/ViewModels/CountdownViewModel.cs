@@ -6,97 +6,112 @@ using Xamarin.Forms;
 
 namespace RocketLauncher.ViewModels
 {
-    public class CountdownViewModel : BaseViewModel
-    {
-        #region Properties
+	public class CountdownViewModel : BaseViewModel
+	{
+		#region Properties
 
-        int? countdown = null;
-        bool cancelled = false;
-        bool launched = false;
+		int? countdown = null;
+		bool cancelled = false;
+		bool launched = false;
 
-        #endregion
+		#endregion
 
-        #region Constructors
+		#region Constructors
 
-        public CountdownViewModel()
-        {
-            countdown = 0;
-            StartTimer();
-        }
+		public CountdownViewModel()
+		{
+			countdown = 0;
+			StartTimer();
+		}
 
-        public CountdownViewModel(int? countdown)
-        {
-            this.countdown = countdown;
-            StartTimer();
-        }
+		public CountdownViewModel(int? countdown)
+		{
+			this.countdown = countdown;
+			StartTimer();
+		}
 
-        #endregion
+		#endregion
 
-        #region Public Properties
+		#region Public Properties
 
-        public int? Countdown
-        {
-            get { return countdown; }
-            set
-            {
-                if (countdown != value)
-                {
-                    countdown = value;
-                    Notify("Countdown");
-                    Notify("Status");
-                }
-            }
-        }
-
-        public bool Cancelled
-        {
-            get { return cancelled; }
-            set
-            {
-                if (cancelled != value)
-                {
-                    cancelled = value;
-                    Notify("Cancelled");
-                    Notify("Status");
-                }
-            }
-        }
-
-        public bool Launched
-        {
-            get { return launched; }
-            set
-            {
-                if (launched != value)
-                {
-                    launched = value;
-                    Notify("Launched");
+		public int? Countdown
+		{
+			get { return countdown; }
+			set
+			{
+				if (countdown != value)
+				{
+					countdown = value;
+					Notify("Countdown");
                     Notify("Status");
                     Notify("AbortText");
+                    Notify("AbortEnabled");
                 }
-            }
-        }
+			}
+		}
 
-        public string Status
-        {
-            get
-            {
-                if (Cancelled)
-                    return "Launch Cancelled.";
-                else if (Launched)
-                    return "Launched Successfully.";
-                else if (Countdown == null || Countdown.Value <= 0)
-                    return "Liftoff!!!";
-                else
-                    return string.Format("Launching in T-{0} seconds...", Countdown);
-            }
+		public bool Cancelled
+		{
+			get { return cancelled; }
+			set
+			{
+				if (cancelled != value)
+				{
+					cancelled = value;
+					Notify("Cancelled");
+					Notify("Status");
+                }
+			}
+		}
+
+		public bool Launched
+		{
+			get { return launched; }
+			set
+			{
+				if (launched != value)
+				{
+					launched = value;
+					Notify("Launched");
+					Notify("Status");
+					Notify("AbortText");
+                    Notify("AbortEnabled");
+                }
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				if (Cancelled)
+					return "Launch Cancelled.";
+				else if (Launched)
+					return "Launched Successfully.";
+				else if (Countdown == null || Countdown.Value <= 0)
+					return "Liftoff!!!";
+				else
+					return string.Format("Launching in T-{0} seconds...", Countdown);
+			}
         }
 
         public string AbortText
         {
             get
             {
+                if (!Launched && Countdown != null && Countdown.Value <= 0)
+                    return "WAITING FOR RESPONSE...";
                 return Launched ? "RETURN" : "ABORT";
+            }
+        }
+
+        public bool AbortEnabled
+        {
+            get
+            {
+                if (!Launched && Countdown != null && Countdown.Value <= 0)
+                    return false;
+                return true;
             }
         }
 
@@ -105,22 +120,22 @@ namespace RocketLauncher.ViewModels
         #region Methods
 
         protected bool StartTimer()
-        {
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
-                if (Countdown == null)
-                    return false;
-                else if (Countdown <= -3)
-                    //Todo: Check for actual launch
-                    Launched = true;
-                else
-                    Countdown = Countdown - 1;
-                return true;
-            });
+		{
+			Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+			{
+				if (Countdown == null)
+					return false;
+				else if (Countdown <= -3)
+					//Todo: Check for actual launch
+					Launched = true;
+				else
+					Countdown = Countdown - 1;
+				return true;
+			});
 
-            return true;
-        }
+			return true;
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }
