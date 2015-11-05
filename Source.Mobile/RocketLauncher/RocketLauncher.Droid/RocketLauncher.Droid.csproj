@@ -136,6 +136,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\Drawable\Background.jpg" />
+    <AndroidResource Include="Resources\Drawable\BackgroundTiled.xml" />
+    <AndroidResource Include="Resources\Drawable\Background2.jpg" />
+    <AndroidResource Include="Resources\Drawable\Background3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\layout\" />
